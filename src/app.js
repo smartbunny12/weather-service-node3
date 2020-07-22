@@ -41,7 +41,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'This is help info',
+        helpText: 'Contact: XXXX@gmail.com',
         title: 'Weather App',
         name: 'Fanqi Xue'
     })
