@@ -4,10 +4,13 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+
 //console.log(__dirname)
 //console.log(path.join(__dirname, '../public')) 
 
 const app = express()
+// port = process.env.PORT(for heroku) , it does not exit, use 3000 for local
+const port = process.env.PORT || 3000
 
 // define paths for express config
 const publicDirectionPath = path.join(__dirname, '../public')
@@ -94,7 +97,7 @@ app.get('/help/*', (req, res)=> {
         errorMessage: 'Page not found.'
     })
 })
-// listen to the 3000 port, click: control + C exit
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
